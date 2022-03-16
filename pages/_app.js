@@ -47,6 +47,12 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        <script
+          defer
+          src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+          integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+          crossorigin="anonymous"
+        ></script>
       </Head>
       <Component {...pageProps} />
     </Provider>

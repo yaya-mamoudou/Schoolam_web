@@ -1,0 +1,29 @@
+.footer{
+    color: white;
+    background-color: #2F3635;
+    padding: 0;
+    /* padding: calc(var(--padding) * 2); */
+}
+
+.footer h6{
+    font-weight: bold;
+    font-size: large;
+}
+
+.footer span{
+    font-size: 0.88rem;
+}
+
+.footer_sub{
+    background-color: #656B6B;
+    padding: calc(var(--padding) / 2);
+    font-size: smaller;
+}
+.twitter_icon{
+    color: #55ACEE;
+}
+
+.fb_icon, .twitter_icon{
+    font-size: 26px;
+    margin-right: 1rem;
+}

@@ -1,0 +1,13 @@
+.nav_links span:not(:first-child){
+    margin-left: 1.5rem;
+}
+
+.nav_links span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navbar{
+    border-bottom: solid 1px #ccc;
+    font-weight: bold;
+}
