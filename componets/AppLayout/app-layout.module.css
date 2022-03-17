@@ -1,3 +1,10 @@
 .child_container{
-    /* min-height: 100vh; */
+
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto minmax(100vh,auto) auto;
+    /* grid-template-columns: repeat(1fr,4); */
 }

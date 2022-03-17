@@ -1,0 +1,10 @@
+.form_body{
+    background-color: #5C6A68;
+    padding: var(--padding);
+}
+
+.search_btn{
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+}
