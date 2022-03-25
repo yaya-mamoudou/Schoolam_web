@@ -1,4 +1,8 @@
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
 import AppLayout from './AppLayout/AppLayout';
-export { Navbar, Footer, AppLayout };
+import Title from './Title/Title';
+import SearchSection from './SearchSection/SearchSection';
+import UniversityCard from './UniversityCard/UniversityCard';
+import Button from './Button/Button';
+export { Navbar, Footer, AppLayout, Title, SearchSection, UniversityCard, Button };

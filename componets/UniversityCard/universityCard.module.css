@@ -1,0 +1,60 @@
+.language_btn{
+    color: var(--orange);
+    font-weight: bold;
+    background-color: #e6d5d4;
+    width: fit-content;
+    align-self: center;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 1px ;
+    width: 50%;
+}
+
+.see_more_btn{
+    color: white;
+    font-weight: bold;
+    background-color: var(--green);
+    position: relative !important;
+    bottom: 0 !important;
+}
+
+.card{
+    /* padding: 1rem !important; */
+}
+
+
+/* // X-Small devices (portrait phones, less than 576px) */
+/* // No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .card{
+        padding: 1.5rem 1rem !important ;
+    }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .card{
+        padding: 2rem 1rem !important ;
+    }
+
+ }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .card{
+        padding: calc(1rem * 3) !important ;
+    }
+
+ }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+
+ }

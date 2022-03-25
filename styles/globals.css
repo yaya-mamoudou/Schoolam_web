@@ -20,6 +20,13 @@
 
 /* font-family: 'Yantramanav', sans-serif || 'OpenSans', sans-serif; */
 
+
+button:hover{
+  transform: translate(5px,-5px);
+  opacity: 0.8;
+  transition: transform 0.4s;
+}
+
 html,
 body {
 padding: 0;

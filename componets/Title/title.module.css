@@ -1,0 +1,11 @@
+.banner{
+    width: 100px;
+    height: 6px;
+    background-color: var(--green);
+    margin-top: 2px;
+}
+
+.title{
+    font-weight: bold;
+    color: rgb(87, 87, 87);
+}

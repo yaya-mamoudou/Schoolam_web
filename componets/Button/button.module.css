@@ -1,0 +1,7 @@
+.see_more_btn{
+    color: white;
+    font-weight: bold;
+    /* background-color: var(--green); */
+    position: relative !important;
+    bottom: 0 !important;
+}

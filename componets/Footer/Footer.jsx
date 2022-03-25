@@ -3,7 +3,7 @@ import styles from './footer.module.css';
 
 export default function Footer() {
   return (
-    <div className={`container-fluid ${styles.footer}`}>
+    <div className={`container-fluid mt-5 ${styles.footer}`}>
       <div className={`container `}>
         <div className="row py-4  justify-content-between">
           <div className="col-auto  d-flex flex-column">
@@ -21,8 +21,8 @@ export default function Footer() {
           <div className="col-auto d-flex flex-column">
             <h6>Social Media</h6>
             <div> 
-                          <i class={`fab fa-twitter ${styles.twitter_icon}`}></i>
-                <i class={`fab fa-facebook  ${styles.fb_icon}`}></i>
+                <i className={`fab fa-twitter ${styles.twitter_icon}`}></i>
+                <i className={`fab fa-facebook  ${styles.fb_icon}`}></i>
             </div>
           </div>
         </div>

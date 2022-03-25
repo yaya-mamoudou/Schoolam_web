@@ -2,8 +2,7 @@
     color: white;
     background-color: #2F3635;
     padding: 0;
-    /* position: absolute; */
-    /* bottom: 0; */
+    /* position: absolute !important; */
     /* padding: calc(var(--padding) * 2); */
 }
 
