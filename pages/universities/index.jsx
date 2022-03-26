@@ -1,9 +1,21 @@
-import { AppLayout, Title,SearchSection } from '../../componets';
+import { useState, useEffect} from 'react';
+import { AppLayout, Title, SearchSection } from '../../componets';
 import styles from './app.module.css'
 import { UniversityCard } from '../../componets';
+import { useDispatch, useSelector } from 'react-redux';
+import { load_universities} from '../../redux/actions/'
 
 export default function MainApp() {
-  const universityList = universities.map((uni,index) =><UniversityCard key={index} uni={uni}/> )
+
+  const dispatch = useDispatch()
+  const universities = useSelector(({ universities }) => universities.university)
+  console.log(universities);
+
+  useEffect(() => {
+    dispatch(load_universities())
+  }, [])
+  
+  const universityList = universities !== null && universities.map((uni,index) =><UniversityCard key={index} uni={uni}/> )
   return (
     <AppLayout>
       <div className={`container-fluid ${styles.banner} `}>

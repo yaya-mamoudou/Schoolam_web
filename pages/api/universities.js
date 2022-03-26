@@ -1,0 +1,53 @@
+import axios from 'axios';
+const URL = process.env.API_HOSTNAME;
+console.log(URL);
+export default async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const api_res = await axios.get(`${URL}/schoolGuide/university/getuniversity`);
+
+      const data = await api_res.data;
+
+      if (api_res.status === 200) {
+        return res.status(200).json({
+          universities: data,
+        });
+      } else {
+        return res.status(api_res.status).json({
+          error: data.error,
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        error: 'Something went wrong when retrieving agencies',
+      });
+    }
+  } else if (req.method == 'POST') {
+    const body = JSON.stringify(req.body);
+
+    try {
+      const api_res = await axios.post(`${URL}/schoolGuide/university/getuniversity`);
+
+      const data = await api_res.json();
+
+      if (api_res.status === 200) {
+        return res.status(200).json({
+          notes: data,
+        });
+      } else {
+        return res.status(api_res.status).json({
+          error: data.error,
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        error: 'Something went wrong when adding agency',
+      });
+    }
+  } else {
+    res.setHeader('Allow', ['GET']);
+    return res.status(405).json({
+      error: `Method ${req.method} not allowed`,
+    });
+  }
+};

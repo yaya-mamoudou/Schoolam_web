@@ -11,3 +11,7 @@
     border-bottom: solid 1px #ccc;
     font-weight: bold;
 }
+
+.menu_icon{
+    display: none !important;
+}

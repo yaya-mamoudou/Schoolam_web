@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { count_reducer } from './count.reducer';
+import { universities_reducer } from './universities.reducer';
 
 export default combineReducers({
-  count: count_reducer,
+  universities: universities_reducer,
 });
