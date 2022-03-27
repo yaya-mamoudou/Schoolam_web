@@ -1,6 +1,7 @@
 import axios from 'axios';
 const URL = process.env.API_HOSTNAME;
-export default async (req, res) => {
+
+export default universities = async (req, res) => {
   if (req.method === 'GET') {
     try {
       const api_res = await axios.get(`${URL}/schoolGuide/university/getuniversity`);
