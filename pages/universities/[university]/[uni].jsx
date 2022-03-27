@@ -7,7 +7,7 @@ import {Box,Tab} from '@mui/material';
 import {TabContext,TabList,TabPanel} from '@mui/lab';
 import Collapsible from 'react-collapsible';
 import { useDispatch, useSelector } from 'react-redux'
-import { load_programs } from '../../../redux/actions'
+import { clear_programs, load_programs } from '../../../redux/actions'
 
 let img = 'https://ubuea.cm/wp-content/uploads/2021/12/ublogo2-2-60x60.png'
 
@@ -21,9 +21,14 @@ export default function University() {
   const [uni_name, setUni_name] = useState('')
   const [id, setId] = useState()
   const [activeTab, setActiveTab] = useState('1')
-  const [isExpanded, setIsExpanded] = useState(-1)
-  const [sectionOpen, setSectionOpen] = useState(0)
+  const [isExpanded, setIsExpanded] = useState(0)
 
+  useEffect(() => {
+    return () => {
+      dispatch(clear_programs())
+    }
+  }, [])
+  
 
   useEffect(() => {
     if (Object.keys(router.query).length > 0) {
@@ -43,20 +48,22 @@ export default function University() {
     setIsExpanded(-1)
   }
 
-  const ProgramTitle = ({isOpen,title,price}) => (
-    <div 
+  const ProgramTitle = ({ isOpen, title, price, fac }) => {
+
+    return (<div 
       className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex align-items-center`}>
-      <i className="fas fa-caret-down"></i>
-      <div className={`ms-2 ${styles.program_title}`}>{title}</div>
+      <i className={`fas fa-caret-${isOpen ? "down" : "right"}`}></i>
+      <div className={`ms-2 ${styles.program_title}`}><span style={{textTransform:'capitalize'}}>{`${title.toLocaleLowerCase()} (${fac})`}</span></div>
       {!isOpen && <div className={`${styles.price}`}>~{price} FCFA / year</div>}
-    </div>
-  )
+    </div>)
+  }
+    
 
   const ProgramBody = ({program}) => (
     <div className={`${styles.program_detail_section} mb-4 p-3 border rounded`}>
       <div className="row">
         <div className="col-12 col-md-6">
-          <h6 className='fw-bold'>{program.deg_type} in {program.spe_name}</h6>
+          <h6 className='fw-bold'><span style={{textTransform:'capitalize'}}>{program.deg_type} </span> in {program.spe_name} from {program.dep_id.fact_id.fact_name}</h6>
           <div className='my-3 d-flex'>
             <span className={` ${styles.icon}`}>
             <i className={`fas fa-clock text-secondary`}></i>
@@ -100,10 +107,10 @@ export default function University() {
         </div>
       </div>
       <div className="container mt-4">
-        <div className="row gx-2 gy-4">
+        <div className="row gx-4 gy-4">
           <div className=" col-xs-12  col-lg-4 col-xl-3">
             <div className=" border rounded p-3 d-flex flex-column align-items-center">
-              <Image width={80} height={80} src={img} objectFit="contain" className="" />
+             {uniData.logo &&  <Image width={80} height={80} src={uniData.logo} objectFit="contain" className="" />}
               <h5 className='fw-bold my-2 text-center'>{uniData.univ_name}</h5>
               <hr className={`my-4 ${styles.line}`} />
               <div>
@@ -135,19 +142,25 @@ export default function University() {
                   })}
                   
                 </TabList>
-              </Box>
+              </Box> 
                 {programs && Object.keys(programs).map((data, index) => {
-                  return (
+                  let length = programs[data].length
+                  return length > 0 && (
                     <TabPanel value={`${index+1}`} key={index}>
                       {
                         programs[data].map((program, index2) => (
-                          <Collapsible key={index2} style={{transition:'5s'}} onOpen={() => setIsExpanded(index2)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle price={program.fee} title={program.spe_name} isOpen={isExpanded == index2 ? true : false} />}>
+                          <Collapsible
+                            open={index2 !== isExpanded ? false : true}
+                            key={index2}
+                            onTriggerOpening={() => setIsExpanded(index2)}
+                            onTriggerClosing={() => setIsExpanded(-1)}
+                            trigger={<ProgramTitle fac={program.dep_id.fact_id.fact_name} price={program.fee} title={program.spe_name} isOpen={isExpanded == index2 ? true : false} />}>
                             <ProgramBody program={program}/>
                           </Collapsible>
                         )
                         )
                       }
-                    </TabPanel> 
+                    </TabPanel>  
                   )
                 
               })}
