@@ -1,7 +1,7 @@
 import axios from 'axios';
 const URL = process.env.API_HOSTNAME;
 
-export default programs = async (req, res) => {
+const programs = async (req, res) => {
   if (req.method === 'GET') {
     try {
       const api_res = await axios.get(`${URL}/schoolGuide/spec_info/getspe_info/${req.query.id}`);
@@ -51,3 +51,5 @@ export default programs = async (req, res) => {
     });
   }
 };
+
+export default programs;

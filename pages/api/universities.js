@@ -1,7 +1,7 @@
 import axios from 'axios';
 const URL = process.env.API_HOSTNAME;
 
-export default universities = async (req, res) => {
+const universities = async (req, res) => {
   if (req.method === 'GET') {
     try {
       const api_res = await axios.get(`${URL}/schoolGuide/university/getuniversity`);
@@ -19,7 +19,7 @@ export default universities = async (req, res) => {
       }
     } catch (err) {
       return res.status(500).json({
-        error: 'Something went wrong when retrieving agencies',
+        error: 'Something went wrong when retrieving universities',
       });
     }
   } else if (req.method == 'POST') {
@@ -51,3 +51,5 @@ export default universities = async (req, res) => {
     });
   }
 };
+
+export default universities;
