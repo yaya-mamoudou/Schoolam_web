@@ -19,7 +19,7 @@ export default function UniversityCard ({uni}) {
             <div>{uni.loc}</div>
           </div>
           <button type='button' className={`btn btn-sm my-2 ${styles.language_btn}`}>{uni.lang}</button>
-          <Link  href={{ pathname: `/university/${uni.name}`,query:{data:encodeURIComponent(JSON.stringify(uni))} }}>
+          <Link  href={{ pathname: `/universities/${uni.univ_name}/${uni._id}`,query:{data:encodeURIComponent(JSON.stringify(uni))} }}>
             <button type='button' role={"button"} className={`btn btn-sm mt-auto ${styles.see_more_btn}`}>See more</button>
           </Link>
         </div>

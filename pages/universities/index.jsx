@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
-import { AppLayout, Title, SearchSection } from '../../componets';
+import { AppLayout, Title, SearchSection } from '../../components';
 import styles from './app.module.css'
-import { UniversityCard } from '../../componets';
+import { UniversityCard } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { load_universities} from '../../redux/actions/'
 
@@ -9,7 +9,6 @@ export default function MainApp() {
 
   const dispatch = useDispatch()
   const universities = useSelector(({ universities }) => universities.university)
-  console.log(universities);
 
   useEffect(() => {
     dispatch(load_universities())

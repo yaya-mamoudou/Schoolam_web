@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { AppLayout, Button, Title } from '../../componets'
+import { useState,useEffect } from 'react'
+import { AppLayout, Button, Title } from '../../../componets'
 import styles from './university.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -10,21 +10,11 @@ import Collapsible from 'react-collapsible';
 export default function University() {
   const router = useRouter()
   const { uni, data } = router.query
-  const [uniData, setUniData] = useState(data ? JSON.parse(decodeURIComponent(router.query.data)) : {})
+  const [uniData, setUniData] = useState({})
   const [activeTab, setActiveTab] = useState('1')
   const [isExpanded, setIsExpanded] = useState(-1)
   const [sectionOpen, setSectionOpen] = useState(0)
-
-  const [programs, setPrograms] = useState([
-    {
-      bachelor:
-      {
-        agriculture:
-          { name: 'Agriculture', title: `Bachelor's in Agriculture`,amount:50000,language:'English',duration:'3 years' }
-      }
-    }
-  ])
-
+  
   const handleTabChange = (e,value) => {
     setActiveTab(value);
     setIsExpanded(-1)

@@ -1,4 +1,4 @@
-import { count_action } from './count.action';
 import { load_universities } from './universities.action';
+import { load_programs } from './univPrograms.action';
 
-export { count_action, load_universities };
+export { load_universities, load_programs };
