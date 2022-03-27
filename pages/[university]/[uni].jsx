@@ -106,7 +106,7 @@ export default function University() {
               </Box>
               <TabPanel value="1">
                   {Array(5).fill(0).map((data, index) =>
-                    <Collapsible  style={{transition:'5s'}} onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
+                    <Collapsible key={index} style={{transition:'5s'}} onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
                     <ProgramBody/>
                     </Collapsible>
                   )
@@ -114,7 +114,7 @@ export default function University() {
               </TabPanel>
               <TabPanel value="2">
                   {Array(3).fill(0).map((data, index) =>
-                    <Collapsible onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
+                    <Collapsible key={index} onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
                     <ProgramBody/>
                     </Collapsible>
                   )
@@ -122,7 +122,7 @@ export default function University() {
               </TabPanel>
               <TabPanel value="3">
                   {Array(2).fill(0).map((data, index) =>
-                    <Collapsible onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
+                    <Collapsible key={index} onOpen={() => setIsExpanded(index)} onClose={() => setIsExpanded(-1)} trigger={<ProgramTitle isOpen={isExpanded == index ? true : false} />}>
                     <ProgramBody/>
                     </Collapsible>
                   )
