@@ -9,7 +9,7 @@ export default function UniversityCard({ uni }) {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3">
           <div  style={{ height: '100%' }} className={`px-5 py-4 d-flex flex-column shadow border position-relative ${styles.card}`}>
-          {uni.logo && <Image objectFit="contain" className='align-self-center' width={50} height={50} src={uni.logo}/>}
+          {uni.logo && <Image objectFit="contain" className='align-self-center' alt='logo' width={50} height={50} src={uni.logo}/>}
           <h6 className='fw-bold text-center mt-2'>{uni.univ_name}</h6>
           <div className='d-flex mt-2'>
             <i style={{width:20}} className="fas fa-hands text-secondary me-1"></i>

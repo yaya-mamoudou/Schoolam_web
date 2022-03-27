@@ -95,7 +95,6 @@ export default function University() {
         <div className='col-12 col-md-6'>
           <h6 className='fw-bold'>Requirements</h6>
           {program.requirements.map((req, index) => <div key={index}>- {req}</div>)}
-          {/* <Button url={""} text={'Requirements'} className="px-4 my-3 btn-secondary"/> */}
         </div>
       </div>
     </div>
@@ -114,7 +113,7 @@ export default function University() {
         <div className="row gx-4 gy-4">
           <div className=" col-xs-12  col-lg-4 col-xl-3">
             <div className=" border rounded p-3 d-flex flex-column align-items-center">
-             {uniData.logo &&  <Image width={80} height={80} src={uniData.logo} objectFit="contain" className="" />}
+             {uniData.logo &&  <Image width={80} alt="logo" height={80} src={uniData.logo} objectFit="contain" className="" />}
               <h5 className='fw-bold my-2 text-center'>{uniData.univ_name}</h5>
               <hr className={`my-4 ${styles.line}`} />
               <div>
