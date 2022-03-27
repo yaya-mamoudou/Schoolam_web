@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react'
-import { AppLayout, Button, Title } from '../../../components/index'
+import { AppLayout, Button, Loader, Title } from '../../../components/index'
 import styles from './university.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -15,13 +15,15 @@ export default function University() {
   const router = useRouter()
   const dispatch = useDispatch()
 
-  const programs = useSelector(({ programs }) => programs.programs)
+  const programs = useSelector(({ programs }) =>  
+  programs.programs
+  )
 
   const [uniData, setUniData] = useState({})
   const [uni_name, setUni_name] = useState('')
   const [id, setId] = useState()
   const [activeTab, setActiveTab] = useState('1')
-  const [isExpanded, setIsExpanded] = useState(0)
+  const [isExpanded, setIsExpanded] = useState(-1)
 
   useEffect(() => {
     return () => {
@@ -51,9 +53,11 @@ export default function University() {
   const ProgramTitle = ({ isOpen, title, price, fac }) => {
 
     return (<div 
-      className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex align-items-center`}>
-      <i className={`fas fa-caret-${isOpen ? "down" : "right"}`}></i>
-      <div className={`ms-2 ${styles.program_title}`}><span style={{textTransform:'capitalize'}}>{`${title.toLocaleLowerCase()} (${fac})`}</span></div>
+      className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex flex-column justify-content-start`}>
+      <div className='d-flex align-items-center'>
+        <i className={`fas fa-caret-${isOpen ? "down" : "right"}`}></i>
+        <div className={`ms-0 ${styles.program_title}`}><span style={{textTransform:'capitalize'}}>{`${title.toLocaleLowerCase()} (${fac})`}</span></div>
+     </div>
       {!isOpen && <div className={`${styles.price}`}>~{price} FCFA / year</div>}
     </div>)
   }
@@ -132,7 +136,7 @@ export default function University() {
           <div className="border rounded p-3">
               <h5 className='fw-bold'>University Programs</h5>
           
-            <TabContext value={activeTab} >
+            {programs !== null ? <TabContext value={activeTab} >
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2 `}>
                 <TabList 
                     TabIndicatorProps={{style: {background:'var(--green)'}}} indicatorColor={'secondary'} textColor="black"  onChange={handleTabChange} aria-label="lab API tabs example">
@@ -160,11 +164,11 @@ export default function University() {
                         )
                         )
                       }
-                    </TabPanel>  
+                    </TabPanel> 
                   )
                 
               })}
-            </TabContext>
+            </TabContext> : <div className='d-flex align-items-center justify-content-start mt-4 '> <Loader/> <span className='ms-3'>Loading programs</span></div>}
 
           </div>
           </div>

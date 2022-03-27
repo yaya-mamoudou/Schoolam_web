@@ -54,7 +54,7 @@
 }
 
 .price{
-    margin-left: auto;
+    /* margin-left: auto; */
     color: var(--green);
     font-weight: bold;
     font-size: 0.9rem;
