@@ -21,6 +21,18 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossOrigin="anonymous"
+      ></Script>
+
+      <Script
+        defer
+        src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossOrigin="anonymous"
+      ></Script>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,11 +42,6 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossOrigin="anonymous"
         />
-        <Script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-          crossOrigin="anonymous"
-        ></Script>
 
         {/* Karma fonts  */}
         {/* USE IN CSS FILE */}
@@ -48,12 +55,6 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
-        <Script
-          defer
-          src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-          integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
-          crossOrigin="anonymous"
-        ></Script>
       </Head>
       <Component {...pageProps} />
     </Provider>
