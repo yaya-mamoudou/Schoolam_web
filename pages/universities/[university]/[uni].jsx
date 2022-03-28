@@ -157,7 +157,7 @@ export default function University() {
                             key={index2}
                             onTriggerOpening={() => setIsExpanded(index2)}
                             onTriggerClosing={() => setIsExpanded(-1)}
-                            trigger={<ProgramTitle fac={program.dep_id.fact_id.fact_name} price={program.fee} title={program.spe_name} isOpen={isExpanded == index2 ? true : false} />}>
+                            trigger={<ProgramTitle fac={program.dep_id?.fact_id?.fact_name} price={program.fee} title={program.spe_name} isOpen={isExpanded == index2 ? true : false} />}>
                             <ProgramBody program={program}/>
                           </Collapsible>
                         )
