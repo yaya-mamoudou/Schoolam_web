@@ -6,5 +6,6 @@ import SearchSection from './SearchSection/SearchSection';
 import UniversityCard from './UniversityCard/UniversityCard';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
+import Hero from './Hero/Hero';
 
-export { Navbar, Footer, AppLayout, Title, SearchSection, UniversityCard, Button, Loader };
+export { Navbar, Footer, AppLayout, Title, SearchSection, UniversityCard, Button, Loader, Hero };

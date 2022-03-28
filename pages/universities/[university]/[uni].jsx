@@ -67,7 +67,7 @@ export default function University() {
     <div className={`${styles.program_detail_section} mb-4 p-3 border rounded`}>
       <div className="row">
         <div className="col-12 col-md-6">
-          <h6 className='fw-bold'><span style={{textTransform:'capitalize'}}>{program.deg_type} </span> in {program.spe_name} from {program.dep_id.fact_id.fact_name}</h6>
+          <h6 className='fw-bold'><span style={{textTransform:'capitalize'}}>{program.deg_type} </span> in {program.spe_name} from {program.dep_id?.fact_id?.fact_name}</h6>
           <div className='my-3 d-flex'>
             <span className={` ${styles.icon}`}>
             <i className={`fas fa-clock text-secondary`}></i>

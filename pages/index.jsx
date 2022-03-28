@@ -10,12 +10,13 @@ export default function Home() {
 
   return (
     <AppLayout>
-        <div className={styles.container}>
-        <Head>
-          <title>Schoolam</title>
-        </Head>
+      <Head>
+        <title>Schoolam</title>
+      </Head>
+      <div className={`${styles.container} container`}>
         
-        </div>
+        yaya
+      </div>
     </AppLayout>
   );
 }

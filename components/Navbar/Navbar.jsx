@@ -38,10 +38,12 @@ export default function Navbar() {
   return (
       <div className={`${styles.navbar} container-fluid`}>
           <div className="container px-2 px-sm-3 d-flex py-3">
-              <div className="logo-container d-flex align-items-center ">
+              <Link href="/">
+                <div role={"button"} className="logo-container d-flex align-items-center ">
                   <Image width={30} height={30} src={logo} alt="logo" />
                   <span className='ms-2'>Schoolam</span>
-              </div>
+                </div>
+              </Link>
               <div className={`d-flex ms-auto align-items-center d-none d-sm-block  ${styles.nav_links}`}>
                   <span><Link href="/">Home</Link></span>
                   <span><Link href="/universities">Universities</Link></span>
