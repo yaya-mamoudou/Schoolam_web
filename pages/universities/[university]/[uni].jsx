@@ -53,7 +53,7 @@ export default function University() {
   const ProgramTitle = ({ isOpen, title, price, fac }) => {
 
     return (<div 
-      className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex flex-column justify-content-start`}>
+      className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex flex-column flex-md-row justify-content-start`}>
       <div className='d-flex align-items-center'>
         <i className={`fas fa-caret-${isOpen ? "down" : "right"}`}></i>
         <div className={`ms-0 ${styles.program_title}`}><span style={{textTransform:'capitalize'}}>{`${title.toLocaleLowerCase()} (${fac})`}</span></div>

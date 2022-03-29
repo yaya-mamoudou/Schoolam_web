@@ -1,0 +1,25 @@
+.container{
+    height: calc(100vh - 62px);
+    background-color: var(--hero-bg);
+}
+
+.header{
+    font-family: var(--title-family);
+    font-size: 3.7rem;
+    font-weight: bolder;
+}
+
+.text{
+    font-size: larger;
+    /* font-weight:lighter; */
+}
+
+.btn{
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.img{
+    position: absolute !important;
+    bottom: 0;
+}
