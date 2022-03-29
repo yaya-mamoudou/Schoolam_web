@@ -52,14 +52,15 @@ export default function University() {
 
   const ProgramTitle = ({ isOpen, title, price, fac }) => {
 
-    return (<div 
-      className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex flex-column flex-md-row justify-content-start`}>
-      <div className='d-flex align-items-center'>
-        <i className={`fas fa-caret-${isOpen ? "down" : "right"}`}></i>
-        <div className={`ms-0 ${styles.program_title}`}><span style={{textTransform:'capitalize'}}>{`${title.toLocaleLowerCase()} (${fac})`}</span></div>
-     </div>
-      {!isOpen && <div className={`${styles.price}`}>~{price} FCFA / year</div>}
-    </div>)
+    return (
+      <div className={`${styles.single_program} ${isOpen && 'border-0 '} d-flex flex-column flex-md-row justify-content-start`}>
+        <div className='d-flex align-items-center'>
+          <i className={`fas fa-caret-${isOpen ? "down" : "right"} d-none d-md-block me-2`}></i>
+          <div className={`ms-0 ${styles.program_title}`}><span style={{ textTransform: 'capitalize' }}>{`${title.toLocaleLowerCase()} (${fac?.toLocaleLowerCase()})`}</span></div>
+          <i className={`fas fa-caret-${isOpen ? "down" : "right"} d-block d-md-none ms-auto ms-md-0`}></i>
+        </div>
+        {!isOpen && <div className={`${styles.price} ms-0 ms-md-auto`}>~{price} FCFA / year</div>}
+      </div>)
   }
     
 
@@ -136,7 +137,7 @@ export default function University() {
               <h5 className='fw-bold'>University Programs</h5>
           
             {programs !== null ? <TabContext value={activeTab} >
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2 `}>
+              <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2`}>
                 <TabList 
                     TabIndicatorProps={{style: {background:'var(--green)'}}} indicatorColor={'secondary'} textColor="black"  onChange={handleTabChange} aria-label="lab API tabs example">
                     {programs && Object.keys(programs).map((data, index) => {
@@ -149,10 +150,11 @@ export default function University() {
                 {programs && Object.keys(programs).map((data, index) => {
                   let length = programs[data].length
                   return length > 0 && (
-                    <TabPanel value={`${index+1}`} key={index}>
+                    <TabPanel value={`${index+1}`}  key={index}>
                       {
                         programs[data].map((program, index2) => (
                           <Collapsible
+                          className="py-2"
                             open={index2 !== isExpanded ? false : true}
                             key={index2}
                             onTriggerOpening={() => setIsExpanded(index2)}

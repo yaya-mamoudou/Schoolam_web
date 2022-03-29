@@ -20,6 +20,9 @@
 
 /* font-family: 'Yantramanav', sans-serif || 'OpenSans', sans-serif; */
 
+.MuiTabPanel-root{
+  padding: 1rem 0 !important;
+}
 
 .Collapsible__contentOuter{
   transition: height 0.2s linear 0s !important;
