@@ -11,7 +11,7 @@ export default function ToExpect() {
           <div className="row justify-content-between gy-4 gx-sm-0">
               {items.map((item, index) => {
                   return (
-                      <div className="col-12 col-md-3  py-3 py-md-2 px-4 px-md-2 d-flex flex-column text-center">
+                      <div key={index} className="col-12 col-md-3  py-3 py-md-2 px-4 px-md-2 d-flex flex-column text-center">
                           <div style={{width:'fit-content'}} className=" align-self-center">
                               <Image src={item.img} width={40} height={40}/>
                           </div>
