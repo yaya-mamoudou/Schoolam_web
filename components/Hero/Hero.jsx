@@ -12,7 +12,7 @@ export default function Hero() {
           <div className={`${styles.text} mt-2`}>Discover universities that you never knew about.</div>
           <div className={`${styles.text} mb-5`}>Search schools like never before.</div>
           <div className={`d-flex ${styles.btn_section}`}>
-            <Button className={`px-5 py-2 ${styles.btn} me-5`} text={'Get started'} />
+            <Button url={'/universities'} className={`px-5 py-2 ${styles.btn} me-5`} text={'Get started'} />
             <Image height={70} width={89} src={'/images/Arrow.png'}/>
           </div>
         </div>

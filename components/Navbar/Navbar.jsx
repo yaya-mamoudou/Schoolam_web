@@ -12,10 +12,6 @@ export default function Navbar() {
   
   useEffect(() => {
     let nav = document.getElementById('navbar')
-    console.log(nav.clientHeight);
-    return () => {
-      
-    }
   }, [])
   
 
@@ -52,7 +48,7 @@ export default function Navbar() {
               <Link href="/">
                 <div role={"button"} className="logo-container d-flex align-items-center ">
                   <Image width={30} height={30} src={logo} alt="logo" />
-                  <span className='ms-2'>Schoolam</span>
+                  <span className='ms-2'>Sooschool</span>
                 </div>
               </Link>
               <div className={`d-flex ms-auto align-items-center d-none d-sm-block  ${styles.nav_links}`}>

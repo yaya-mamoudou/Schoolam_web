@@ -7,5 +7,19 @@ import UniversityCard from './UniversityCard/UniversityCard';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Hero from './Hero/Hero';
+import About from './About/About';
+import ToExpect from './toExpect/ToExpect';
 
-export { Navbar, Footer, AppLayout, Title, SearchSection, UniversityCard, Button, Loader, Hero };
+export {
+  Navbar,
+  Footer,
+  AppLayout,
+  Title,
+  SearchSection,
+  UniversityCard,
+  Button,
+  Loader,
+  Hero,
+  About,
+  ToExpect,
+};

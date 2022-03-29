@@ -8,4 +8,5 @@
 .title{
     font-weight: bold;
     color: rgb(87, 87, 87);
+    font-family: var(--title-family);
 }

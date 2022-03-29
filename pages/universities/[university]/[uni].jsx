@@ -105,7 +105,7 @@ export default function University() {
       <div className={`container-fluid p-0 ${styles.banner} `}>
         <div className={`${styles.overlay_banner}`}>
           <div className="container d-flex">
-            <Title textColor={'white'} bannerColor={'white'} title={uni_name}/>
+            <Title heading={'mt-5'} textColor={'white'} bannerColor={'white'} title={uni_name}/>
          </div>
         </div>
       </div>

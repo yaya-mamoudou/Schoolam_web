@@ -21,7 +21,7 @@ export default function MainApp() {
         <SearchSection/>
       </div>
       <div className="container">
-        <Title title={'LIST OF UNIVERSITIES IN CAMEROON'} />
+        <Title heading={'mt-5'} title={'LIST OF UNIVERSITIES IN CAMEROON'} />
           <div className="row g-4">
             {universityList}
           </div>
