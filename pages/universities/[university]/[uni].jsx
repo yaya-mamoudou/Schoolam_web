@@ -26,6 +26,7 @@ export default function University() {
   const checkTopPosition = async () => {
     let node = await document.getElementById('uniInfo')
     let top = await node.getBoundingClientRect().top
+    console.log(top);
     if (isFixed) {
       top > 10 && setIsFixed(false)
     }
