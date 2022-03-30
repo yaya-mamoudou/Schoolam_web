@@ -12,7 +12,7 @@ export default function CurrentFigures() {
               <div className="container">
                 <div className="row justify-content-between">
                     {items.map((item, index) => (
-                        <div className=" col-12 col-md-3 text-white text-center">
+                        <div key={index} className=" col-12 col-md-3 text-white text-center">
                                 <div style={{fontFamily:'var(--title-family)',fontSize:'5rem',fontWeight:'bold'}}>{item.value}</div>
                                 <div style={{fontSize:'1.7rem',fontFamily:'var(--title-family)'}}>{item.text}</div>
                         </div>
