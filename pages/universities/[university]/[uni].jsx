@@ -240,7 +240,7 @@ export default function University() {
                 </div>
               )}
             </div>
-            <MapUni/>
+            {uniData && <MapUni label={uniData.univ_name} lat={uniData.latitude} lng={uniData.longitude} />}
           </div>
         </div>
       </div>
