@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { About, AppLayout, Hero, Plans, ToExpect } from '../components'
+import { About, AppLayout, CurrentFigures, Hero, Plans, ToExpect } from '../components'
 
 
 export default function Home() {
@@ -17,7 +17,8 @@ export default function Home() {
       <Hero />
       <About />
       <ToExpect />
-      <Plans/>
+      {/* <Plans /> */}
+      <CurrentFigures/>
     </AppLayout>
   );
 }

@@ -10,6 +10,8 @@ import Hero from './Hero/Hero';
 import About from './About/About';
 import ToExpect from './toExpect/ToExpect';
 import Plans from './Plans/Plans';
+import CurrentFigures from './CurrentFigures/CurrentFigures';
+import MapUni from './MapUni/MapUni';
 
 export {
   Navbar,
@@ -24,4 +26,6 @@ export {
   About,
   ToExpect,
   Plans,
+  CurrentFigures,
+  MapUni,
 };

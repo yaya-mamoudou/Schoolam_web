@@ -6,4 +6,7 @@ module.exports = {
   },
   i18n,
   trailingSlash: true,
+  env: {
+    NEXT_MAP_API_KEY: 'AIzaSyCFKaSexrDwhs71JfmiUX2gogSI8_FQ3mc',
+  },
 };

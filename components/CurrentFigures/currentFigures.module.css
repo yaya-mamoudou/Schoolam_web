@@ -1,0 +1,7 @@
+.container{
+    background-image: url('/images/current_figures.jpg');
+    background-size: cover;
+    height: fit-content;
+    margin: 2rem 0;
+    /* background-repeat: no-repeat; */
+}

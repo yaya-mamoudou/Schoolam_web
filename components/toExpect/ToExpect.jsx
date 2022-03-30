@@ -4,7 +4,7 @@ import Title from '../Title/Title'
 
 export default function ToExpect() {
   return (
-      <div className='container'>
+      <div className='container my-5'>
           <div className="d-flex flex-column mb-2">
           <Title className={"align-self-center align-self-md-start fw-bold"} bannerColor={"var(--orange)"} title={'What to expect'}/>
           </div>

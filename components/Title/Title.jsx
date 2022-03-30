@@ -4,7 +4,6 @@ import styles from './title.module.css'
 
 
 export default function Title({ title, heading, textColor = "", bannerColor, className, style = {fontSize:'1.7rem'}}) {
-  console.log(style);
   const router = useRouter()
   return (
     <div className={`mb-4 ${className}`}>
