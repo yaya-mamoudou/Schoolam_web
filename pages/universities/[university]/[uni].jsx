@@ -9,8 +9,6 @@ import Collapsible from 'react-collapsible';
 import { useDispatch, useSelector } from 'react-redux';
 import { clear_programs, load_programs } from '../../../redux/actions';
 
-let img = 'https://ubuea.cm/wp-content/uploads/2021/12/ublogo2-2-60x60.png';
-
 export default function University() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -23,20 +21,20 @@ export default function University() {
   const [activeTab, setActiveTab] = useState('1');
   const [isExpanded, setIsExpanded] = useState(-1);
 
-  const checkTopPosition = async () => {
-    let node = await document.getElementById('uniInfo')
-    let top = await node.getBoundingClientRect().top
-    console.log(top);
-    if (isFixed) {
-      top > 10 && setIsFixed(false)
-    }
-    if (!isFixed) {
-      top < 10 && setIsFixed(true)
-    }
-  }
+  // const checkTopPosition = async () => {
+  //   let node = await document.getElementById('uniInfo')
+  //   let top = await node.getBoundingClientRect().top
+  //   // console.log(top);
+  //   if (isFixed) {
+  //     top > 10 && setIsFixed(false)
+  //   }
+  //   if (!isFixed) {
+  //     top <= 10 && setIsFixed(true)
+  //   }
+  // }
 
   useEffect(() => {
-    window.addEventListener('scroll',checkTopPosition)
+    // window.addEventListener('scroll',checkTopPosition)
     return () => {
       dispatch(clear_programs());
     };
