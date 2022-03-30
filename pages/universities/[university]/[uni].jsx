@@ -14,8 +14,8 @@ let img = 'https://ubuea.cm/wp-content/uploads/2021/12/ublogo2-2-60x60.png';
 export default function University() {
   const router = useRouter();
   const dispatch = useDispatch();
-
   const programs = useSelector(({ programs }) => programs.programs);
+  const [isFixed, setIsFixed] = useState(false)
 
   const [uniData, setUniData] = useState({});
   const [uni_name, setUni_name] = useState('');
@@ -23,7 +23,19 @@ export default function University() {
   const [activeTab, setActiveTab] = useState('1');
   const [isExpanded, setIsExpanded] = useState(-1);
 
+  const checkTopPosition = async () => {
+    let node = await document.getElementById('uniInfo')
+    let top = await node.getBoundingClientRect().top
+    if (isFixed) {
+      top > 10 && setIsFixed(false)
+    }
+    if (!isFixed) {
+      top < 10 && setIsFixed(true)
+    }
+  }
+
   useEffect(() => {
+    window.addEventListener('scroll',checkTopPosition)
     return () => {
       dispatch(clear_programs());
     };
@@ -127,7 +139,7 @@ export default function University() {
       </div>
       <div className="container mt-4">
         <div className="row gx-4 gy-4">
-          <div className=" col-xs-12  col-lg-4 col-xl-3">
+          <div id='uniInfo' style={{position: isFixed ? 'sticky' :'static',top: isFixed && 10}} className=" col-xs-12  col-lg-4 col-xl-3">
             <div className=" border rounded p-3 d-flex flex-column align-items-center">
               {uniData.logo && (
                 <Image
