@@ -58,9 +58,9 @@ export default function SearchSection() {
           </button>
         </div>
       </div>
-      <div className="mb-3 pt-3 text-white px-2 px-lg-0">
+      <div className="mb-3 pt-1 text-white px-2 px-lg-0">
         <div className="row">
-          <div className="col-12 col-lg-3 ">
+          <div className="col-12 col-lg-3 px-0 ">
             <div className="d-flex">
               <span>
                 {'Price'}: &nbsp;&nbsp;
@@ -81,17 +81,19 @@ export default function SearchSection() {
                 />
               </span>
             </div>
-            <ThemeProvider theme={theme}>
-              <Slider
-                step={10000}
-                min={50000}
-                max={2000000}
-                onChange={changePrice}
-                value={price}
-                classes={{ thumbColorSecondary: 'red' }}
-                color="secondary"
-              />
-            </ThemeProvider>
+            <div className="px-2">
+              <ThemeProvider theme={theme}>
+                <Slider
+                  step={10000}
+                  min={50000}
+                  max={2000000}
+                  onChange={changePrice}
+                  value={price}
+                  classes={{ thumbColorSecondary: 'red' }}
+                  color="secondary"
+                />
+              </ThemeProvider>
+            </div>
           </div>
         </div>
       </div>

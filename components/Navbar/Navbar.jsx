@@ -13,6 +13,10 @@ export default function Navbar() {
   useEffect(() => {
     let nav = document.getElementById('navbar')
   }, [])
+
+  const toggleMenu = () => {
+    
+  }
   
 
     const toggleDrawer = () => {
@@ -51,12 +55,14 @@ export default function Navbar() {
                   <span className='ms-2'>Sooschool</span>
                 </div>
               </Link>
-              <div className={`d-flex ms-auto align-items-center d-none d-sm-block  ${styles.nav_links}`}>
+              {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={toggleMenu}><i className="fas fa-search"></i></span>}
+              <div className={`d-flex align-items-center d-none d-sm-block  ${styles.nav_links}`}>
+                  {/* <span onClick={toggleMenu}><i className="fas fa-search"></i></span> */}
                   <span><Link href="/">Home</Link></span>
                   <span><Link href="/universities">Universities</Link></span>
                   <span>FAQ</span>
               </div>
-              <span onClick={toggleDrawer} className="align-self-center d-block d-sm-none ms-auto ">
+              <span onClick={toggleDrawer} className={`align-self-center d-block d-sm-none ${pathname !== '/universities' && "ms-auto"}`}>
               <i  className={`fas fa-bars`}></i>
                </span>
                 <Drawer
