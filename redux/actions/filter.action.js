@@ -1,24 +1,26 @@
-import { FILTER } from "../types";
+import { FILTER, FILTER_UNIVERSITIES_SUCCESS } from "../types";
 import axios from "axios";
 
 export const filter_universities = (selection) => async (dispatch) => {
   try {
-    console.log(selection);
+    console.log(typeof selection.price[0]);
     const res = await axios.get("/api/filter", {
       params: {
         deg_type: selection.degree,
         language: selection.language,
-        location: selection.location,
+        region: selection.location,
+        price1: selection.price[0],
+        price2: selection.price[1],
       },
     });
 
     const data = await res.data;
     if (res.status === 200) {
       console.log(data);
-      // dispatch({
-      //   type: LOAD_UNIVERSITIES_SUCCESS,
-      //   payload: data.universities,
-      // });
+      dispatch({
+        type: FILTER_UNIVERSITIES_SUCCESS,
+        payload: data.searchResult,
+      });
     } else {
       // dispatch({
       //   type: LOAD_UNIVERSITIES_FAIL,

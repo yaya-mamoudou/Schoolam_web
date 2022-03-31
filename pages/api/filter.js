@@ -8,12 +8,13 @@ const filter = async (req, res) => {
         params: {
           deg_type: req.query.deg_type,
           language: req.query.language,
-          region: req.query.location,
+          region: req.query.region,
+          "fee[gte]": req.query.price1,
+          "fee[lte]": req.query.price2,
         },
       });
       const data = await api_res.data;
       if (api_res.status === 200) {
-        // console.log("response");
         return res.status(200).json({
           searchResult: data,
         });

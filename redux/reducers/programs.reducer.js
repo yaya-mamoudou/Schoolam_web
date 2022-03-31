@@ -1,4 +1,8 @@
-import { LOAD_PROGRAMS_FAIL, LOAD_PROGRAMS_SUCCESS, CLEAR_PROGRAMS } from '../types';
+import {
+  LOAD_PROGRAMS_FAIL,
+  LOAD_PROGRAMS_SUCCESS,
+  CLEAR_PROGRAMS,
+} from "../types";
 
 const initialState = {
   programs: null,

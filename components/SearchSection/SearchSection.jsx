@@ -24,7 +24,6 @@ export default function SearchSection() {
   };
 
   const submit = () => {
-    console.log("hey");
     dispatch(filter_universities(data));
   };
 
