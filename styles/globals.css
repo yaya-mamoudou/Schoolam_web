@@ -28,6 +28,10 @@
   transition: height 0.2s linear 0s !important;
 }
 
+.btn:hover{
+  color: white !important
+}
+
 html,
 body {
 padding: 0;

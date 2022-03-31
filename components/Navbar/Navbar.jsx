@@ -19,84 +19,72 @@ export default function Navbar() {
   const { pathname } = useRouter();
 
   useEffect(() => {
-    let nav = document.getElementById("navbar");
-  }, []);
+    let nav = document.getElementById('navbar')
+  }, [])
+
+  const toggleMenu = () => {
+    
+  }
+  
 
   const toggleDrawer = () => {
     setState(!state);
   };
 
-  const list = () => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer}
-      onKeyDown={toggleDrawer}
-    >
-      <List>
-        {["Home", "Universities", "FAQ"].map((text, index) => (
-          <ListItem button key={index}>
-            <Link
-              href={
-                text == "Home"
-                  ? "/"
-                  : text == "Universities"
-                  ? "/universities"
-                  : text == "FAQ" && "/faq"
-              }
-            >
-              <div className="w-100">
-                <div className="fw-bold">{text}</div>
-                <Divider className="mt-3" />
-              </div>
-            </Link>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  return (
-    <div
-      id="navbar"
-      style={
-        pathname == "/"
-          ? { borderBottom: "none", backgroundColor: "var(--hero-bg" }
-          : {}
-      }
-      className={`${styles.navbar} container-fluid`}
-    >
-      <div className="container px-2 px-sm-3 d-flex py-3">
-        <Link href="/">
-          <div
-            role={"button"}
-            className="logo-container d-flex align-items-center "
-          >
-            <Image width={30} height={30} src={logo} alt="logo" />
-            <span className="ms-2">Sooschool</span>
-          </div>
-        </Link>
-        <div
-          className={`d-flex ms-auto align-items-center d-none d-sm-block  ${styles.nav_links}`}
-        >
-          <span>
-            <Link href="/">Home</Link>
-          </span>
-          <span>
-            <Link href="/universities">Universities</Link>
-          </span>
-          <span>FAQ</span>
-        </div>
-        <span
+    const list = () => (
+        <Box
+          sx={{ width: 250 }}
+          role="presentation"
           onClick={toggleDrawer}
-          className="align-self-center d-block d-sm-none ms-auto "
+          onKeyDown={toggleDrawer}
         >
-          <i className={`fas fa-bars`}></i>
-        </span>
+          <List>
+            {['Home', 'Universities', 'FAQ',].map((text, index) => (
+              <ListItem button key={index}>
+                <Link href={text=='Home'?'/':text=='Universities'?'/universities':text == 'FAQ' && '/faq' }>
+                    <div className='w-100'>
+                        <div className='fw-bold'>{text}</div>
+                        <Divider className='mt-3' />
+                    </div>
+                </Link>
+              </ListItem>
+            ))}
+          </List>
+          
+        </Box>
+      );
+    
+  return (
+    <div id='navbar' style={pathname == '/' ? { borderBottom: 'none', backgroundColor: 'var(--hero-bg'} :{}} className={`${styles.navbar} container-fluid`}>
+          <div className="container px-2 px-sm-3 d-flex py-3">
+              <Link href="/">
+                <div role={"button"} className="logo-container d-flex align-items-center ">
+                  <Image width={30} height={30} src={logo} alt="logo" />
+                  <span className='ms-2'>Sooschool</span>
+                </div>
+              </Link>
+              {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={toggleMenu}><i className="fas fa-search"></i></span>}
+              <div className={`d-flex align-items-center d-none d-sm-block  ${styles.nav_links}`}>
+                  {/* <span onClick={toggleMenu}><i className="fas fa-search"></i></span> */}
+                  <span><Link href="/">Home</Link></span>
+                  <span><Link href="/universities">Universities</Link></span>
+                  <span>FAQ</span>
+              </div>
+              <span onClick={toggleDrawer} className={`align-self-center d-block d-sm-none ${pathname !== '/universities' && "ms-auto"}`}>
+              <i  className={`fas fa-bars`}></i>
+               </span>
+                <Drawer
+                    anchor={'right'}
+                    open={state}
+                    onClose={toggleDrawer}
+                >
+                    {list()}
+                </Drawer>
+          </div>
+       
         <Drawer anchor={"right"} open={state} onClose={toggleDrawer}>
           {list()}
         </Drawer>
       </div>
-    </div>
   );
 }
