@@ -1,18 +1,22 @@
 import axios from "axios";
 const URL = process.env.API_HOSTNAME;
 
-const universities = async (req, res) => {
+const filter = async (req, res) => {
   if (req.method === "GET") {
     try {
-      const api_res = await axios.get(
-        `${URL}/schoolGuide/university/getuniversity`
-      );
-
+      const api_res = await axios.get(`${URL}/schoolGuide/filter`, {
+        params: {
+          deg_type: req.query.deg_type,
+          language: req.query.language,
+          region: req.query.region,
+          "fee[gte]": req.query.price1,
+          "fee[lte]": req.query.price2,
+        },
+      });
       const data = await api_res.data;
-
       if (api_res.status === 200) {
         return res.status(200).json({
-          universities: data,
+          searchResult: data,
         });
       } else {
         return res.status(api_res.status).json({
@@ -21,7 +25,7 @@ const universities = async (req, res) => {
       }
     } catch (err) {
       return res.status(500).json({
-        error: "Something went wrong when retrieving universities",
+        error: "Something went wrong when retrieving programs",
       });
     }
   } else if (req.method == "POST") {
@@ -56,4 +60,4 @@ const universities = async (req, res) => {
   }
 };
 
-export default universities;
+export default filter;

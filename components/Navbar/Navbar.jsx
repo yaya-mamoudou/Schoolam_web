@@ -1,15 +1,23 @@
-import React,{useEffect} from 'react'
-import logo from '../../public/images/logo.png'
-import Image from 'next/image'
-import styles from './navbar.module.css'
-import Link from 'next/link'
-import {useRouter} from 'next/router'
-import {Box,Drawer,List,Divider,ListItem,ListItemIcon,ListItemText} from '@mui/material'
+import React, { useEffect } from "react";
+import logo from "../../public/images/logo.png";
+import Image from "next/image";
+import styles from "./navbar.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import {
+  Box,
+  Drawer,
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 
 export default function Navbar() {
   const [state, setState] = React.useState(false);
-  const { pathname } = useRouter()
-  
+  const { pathname } = useRouter();
+
   useEffect(() => {
     let nav = document.getElementById('navbar')
   }, [])
@@ -19,9 +27,9 @@ export default function Navbar() {
   }
   
 
-    const toggleDrawer = () => {
-        setState(!state);
-    };
+  const toggleDrawer = () => {
+    setState(!state);
+  };
 
     const list = () => (
         <Box
@@ -73,10 +81,10 @@ export default function Navbar() {
                     {list()}
                 </Drawer>
           </div>
-         
-        
-    
-    </div>
-  )
+       
+        <Drawer anchor={"right"} open={state} onClose={toggleDrawer}>
+          {list()}
+        </Drawer>
+      </div>
+  );
 }
-
