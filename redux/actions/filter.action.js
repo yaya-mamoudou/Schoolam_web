@@ -9,8 +9,6 @@ export const filter_universities = (selection) => async (dispatch) => {
         deg_type: selection.degree,
         language: selection.language,
         region: selection.location,
-        price1: selection.price[0],
-        price2: selection.price[1],
       },
     });
 
