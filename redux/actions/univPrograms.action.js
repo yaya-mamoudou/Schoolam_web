@@ -1,9 +1,13 @@
-import { LOAD_PROGRAMS_SUCCESS, LOAD_PROGRAMS_FAIL, CLEAR_PROGRAMS } from '../types';
-import axios from 'axios';
+import {
+  LOAD_PROGRAMS_SUCCESS,
+  LOAD_PROGRAMS_FAIL,
+  CLEAR_PROGRAMS,
+} from "../types";
+import axios from "axios";
 
 export const load_programs = (univ_id) => async (dispatch) => {
   try {
-    const res = await axios.get('/api/programs', { params: { id: univ_id } });
+    const res = await axios.get("/api/programs", { params: { id: univ_id } });
 
     const data = await res.data;
 
