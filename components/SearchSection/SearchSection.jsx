@@ -6,11 +6,13 @@ import { createTheme } from "@mui/material/styles";
 import NumberFormat from "react-number-format";
 import { useDispatch } from "react-redux";
 import { filter_universities } from "../../redux/actions/";
+import Loader from "../Loader/Loader";
 
 export default function SearchSection() {
   const dispatch = useDispatch();
 
   const [price, setPrice] = useState([50000, 2000000]);
+  const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState({
     price: null,
     location: null,
@@ -23,8 +25,10 @@ export default function SearchSection() {
     setData({ ...data, price: [...range] });
   };
 
-  const submit = () => {
-    dispatch(filter_universities(data));
+  const submit = async () => {
+    setIsLoading(true)
+    await dispatch(filter_universities(data));
+    setIsLoading(false)
   };
 
   const theme = createTheme({
@@ -82,8 +86,12 @@ export default function SearchSection() {
             onClick={submit}
             className={`btn  d-flex justify-content-center align-items-center w-100  btn-sm ${styles.search_btn}`}
           >
-            <i className="fas fa-search"></i>
-            <span className="d-none d-sm-block fa-x2 ms-1">Filter</span>
+            {isLoading ? <Loader /> : 
+              <div className="d-flex align-items-center">
+                <i className="fas fa-search"></i>
+                <span className="d-none d-sm-block fa-x2 ms-1">Filter</span>
+              </div>
+            }
           </button>
         </div>
       </div>
@@ -131,8 +139,12 @@ export default function SearchSection() {
             onClick={submit}
             className={`btn  d-flex justify-content-center align-items-center w-100 py-2 ${styles.search_btn}`}
           >
-            <i className="fas fa-search"></i>
-            <span className="fa-x2 ms-1">Filter</span>
+            {isLoading ? <Loader/> : 
+              <div className="d-flex align-items-center">
+                <i className="fas fa-search"></i>
+                <span className="fa-x2 ms-1">Filter</span>
+              </div>
+            }
           </button>
         </div>
     </div>

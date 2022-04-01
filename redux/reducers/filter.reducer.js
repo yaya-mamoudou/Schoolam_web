@@ -1,7 +1,7 @@
-import { FILTER, FILTER_UNIVERSITIES_SUCCESS } from "../types";
+import { FILTER, FILTER_UNIVERSITIES_SUCCESS } from '../types';
 
 const initialState = {
-  filterResult: null,
+  searchResult: null,
 };
 
 export const filter_reducer = (state = initialState, action) => {

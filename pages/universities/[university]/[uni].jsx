@@ -179,8 +179,9 @@ export default function University() {
 
               {programs !== null ? (
                 <TabContext value={activeTab}>
-                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2`}>
+                  <Box  sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2`}>
                     <TabList
+                      scrollButtons="auto"
                       TabIndicatorProps={{ style: { background: 'var(--green)' } }}
                       indicatorColor={'secondary'}
                       textColor="black"

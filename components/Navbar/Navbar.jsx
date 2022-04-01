@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import logo from "../../public/images/logo.png";
 import Image from "next/image";
 import styles from "./navbar.module.css";
@@ -15,8 +15,9 @@ import {
 } from "@mui/material";
 
 export default function Navbar() {
-  const [state, setState] = React.useState(false);
+  const [state, setState] = useState(false);
   const { pathname } = useRouter();
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   useEffect(() => {
     let nav = document.getElementById('navbar')
@@ -26,6 +27,9 @@ export default function Navbar() {
     
   }
   
+  const submit = () => {
+    
+  }
 
   const toggleDrawer = () => {
     setState(!state);
@@ -50,12 +54,11 @@ export default function Navbar() {
               </ListItem>
             ))}
           </List>
-          
         </Box>
       );
     
   return (
-    <div id='navbar' style={pathname == '/' ? { borderBottom: 'none', backgroundColor: 'var(--hero-bg'} :{}} className={`${styles.navbar} container-fluid`}>
+    <div id='navbar' style={pathname == '/' ? { borderBottom: 'none', backgroundColor: 'var(--hero-bg'} :{backgroundColor: 'white',zIndex:10000}} className={`${styles.navbar} container-fluid`}>
           <div className="container px-2 px-sm-3 d-flex py-3">
               <Link href="/">
                 <div role={"button"} className="logo-container d-flex align-items-center ">
@@ -63,7 +66,7 @@ export default function Navbar() {
                   <span className='ms-2'>Sooschool</span>
                 </div>
               </Link>
-              {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={toggleMenu}><i className="fas fa-search"></i></span>}
+              {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={()=>setIsSearchOpen(!isSearchOpen)}><i className="fas fa-search"></i></span>}
               <div className={`d-flex align-items-center d-none d-sm-block  ${styles.nav_links}`}>
                   {/* <span onClick={toggleMenu}><i className="fas fa-search"></i></span> */}
                   <span><Link href="/">Home</Link></span>
@@ -81,6 +84,20 @@ export default function Navbar() {
                     {list()}
                 </Drawer>
           </div>
+          {isSearchOpen && <div className="py-2 bg-white">
+            <div className="container">
+              <div className="row justify-content-center mt-3">
+                <div className="col-10 col-md-5">
+                  <input autoFocus type="text" placeholder='Search' id="inputPassword5" className="form-control" />
+                </div>
+                
+                <button style={{backgroundColor:'var(--green)'}} className={`btn d-flex  text-white col-2 col-md-1  justify-content-center align-items-center  btn-sm ${styles.search_btn}`}>
+                  <i className="fas fa-search"></i>
+                  <span className='d-none d-sm-block' onClick={submit}>Search</span>
+                </button>
+              </div>
+            </div>
+          </div>}
        
         <Drawer anchor={"right"} open={state} onClose={toggleDrawer}>
           {list()}
