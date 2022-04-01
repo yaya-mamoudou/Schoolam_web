@@ -60,8 +60,8 @@ export default function Navbar() {
   return (
     <div id='navbar' style={pathname == '/' ? { borderBottom: 'none', backgroundColor: 'var(--hero-bg'} :{backgroundColor: 'white',zIndex:10000}} className={`${styles.navbar} container-fluid`}>
           <div className="container px-2 px-sm-3 d-flex py-3">
-              <Link href="/">
-                <div role={"button"} className="logo-container d-flex align-items-center ">
+              <Link  href="/">
+                <div role={"button"} className="logo-container me-auto d-flex align-items-center ">
                   <Image width={30} height={30} src={logo} alt="logo" />
                   <span className='ms-2'>Sooschool</span>
                 </div>
