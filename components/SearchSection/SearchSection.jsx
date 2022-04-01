@@ -165,6 +165,7 @@ const languages = [
 const locations = [
   { value: "ADAMAWA REGION", label: "Adamawa region" },
   { value: "EAST REGION", label: "East region" },
+  { value: "SOUTH WEST REGION", label: "South West region" },
   { value: "CENTRE REGION", label: "Center region" },
   { value: "FAR NORTH REGION", label: "Far North region" },
   { value: "LITTORAL REGION", label: "Littoral region" },
@@ -172,5 +173,4 @@ const locations = [
   { value: "NORTH WEST REGION", label: "North West region" },
   { value: "WEST REGION", label: "West region" },
   { value: "SOUTH REGION", label: "South region" },
-  { value: "SOUTH WEST REGION", label: "South West region" },
 ];

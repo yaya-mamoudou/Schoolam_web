@@ -3,7 +3,7 @@ import { AppLayout, Button, Loader, MapUni, Title } from '../../../components/in
 import styles from './university.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Box, Tab } from '@mui/material';
+import { Box, Tab, Tabs } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import Collapsible from 'react-collapsible';
 import { useDispatch, useSelector } from 'react-redux';
@@ -180,9 +180,9 @@ export default function University() {
               {programs !== null ? (
                 <TabContext value={activeTab}>
                   <Box  sx={{ borderBottom: 1, borderColor: 'divider' }} className={`mt-5 mb-2`}>
-                    <TabList
-                      scrollButtons="auto"
-                      variant='scrollable'
+                    <Tabs
+                      scrollButtons={false}
+                      allowScrollButtonsMobile
                       TabIndicatorProps={{ style: { background: 'var(--green)' } }}
                       indicatorColor={'secondary'}
                       textColor="black"
@@ -203,7 +203,7 @@ export default function University() {
                             )
                           );
                         })}
-                    </TabList>
+                    </Tabs>
                   </Box>
                   {programs &&
                     Object.keys(programs).map((data, index) => {

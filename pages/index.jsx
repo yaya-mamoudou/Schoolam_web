@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <AppLayout>
       <Head>
-        <title>Schoolam</title>
+        <title>Lewa</title>
       </Head>
       <Hero />
       <About />

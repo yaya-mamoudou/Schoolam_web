@@ -59,11 +59,11 @@ export default function Navbar() {
     
   return (
     <div id='navbar' style={pathname == '/' ? { borderBottom: 'none', backgroundColor: 'var(--hero-bg'} :{backgroundColor: 'white',zIndex:10000}} className={`${styles.navbar} container-fluid`}>
-          <div className="container px-2 px-sm-3 d-flex py-3">
+          <div style={{fontFamily:'var(--title-family)',fontSize:16}} className="container px-2 px-sm-3 d-flex  py-3">
               <Link  href="/">
                 <div role={"button"} className="logo-container me-auto d-flex align-items-center ">
                   <Image width={30} height={30} src={logo} alt="logo" />
-                  <span className='ms-2'>Sooschool</span>
+                  <span className='ms-2 '>Lewa</span>
                 </div>
               </Link>
               {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={()=>setIsSearchOpen(!isSearchOpen)}><i className="fas fa-search"></i></span>}
