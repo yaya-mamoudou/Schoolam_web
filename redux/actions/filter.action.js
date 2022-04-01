@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const filter_universities = (selection) => async (dispatch) => {
   try {
-    console.log(selection);
     const res = await axios.get('/api/filter', {
       params: {
         deg_type: selection.degree,
@@ -16,13 +15,12 @@ export const filter_universities = (selection) => async (dispatch) => {
 
     const data = await res.data;
 
-    console.log(data);
-
     if (res.status === 200) {
       dispatch({
         type: FILTER_UNIVERSITIES_SUCCESS,
-        payload: data.searchResult,
+        payload: data,
       });
+      return true;
     } else {
       // dispatch({
       //   type: LOAD_UNIVERSITIES_FAIL,
