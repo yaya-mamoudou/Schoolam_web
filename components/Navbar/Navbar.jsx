@@ -63,7 +63,7 @@ export default function Navbar() {
               <Link  href="/">
                 <div role={"button"} className="logo-container me-auto d-flex align-items-center ">
                   <Image width={30} height={30} src={logo} alt="logo" />
-                  <span className='ms-2 '>Lewa</span>
+                  <span className='ms-2 '>Lewwa</span>
                 </div>
               </Link>
               {pathname == '/universities' && <span className='ms-auto me-3 align-self-center' onClick={()=>setIsSearchOpen(!isSearchOpen)}><i className="fas fa-search"></i></span>}

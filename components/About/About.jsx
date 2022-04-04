@@ -12,7 +12,7 @@ export default function About() {
             </div>
             <div className={`${styles.content_box} col-12 col-sm-6 px-4`}>
                 <div className='d-flex flex-column'>
-                <Title heading={'mt-0'} className="align-self-center align-self-md-start mt-0" bannerColor={"var(--orange)"} title={'About Sooschool'}/>
+                <Title heading={'mt-0'} className="align-self-center align-self-md-start mt-0" bannerColor={"var(--orange)"} title={'About Lewwa'}/>
                   <p>Soochool is a platform built to assist students in their search for Universities through an accurate filtering and location on a map.</p>
                   <p>It provides a large amount of degree programs offered and requirements. It also includes</p>
                 </div>
